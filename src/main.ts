@@ -167,17 +167,6 @@ export default class ModalFormPlugin extends Plugin {
                 this.manageForms()
             }
         );
-        for (const choice of this.settings.choices) {
-            if (choice.type === "Template") {
-                this.addCommand({
-                    id: `choice:${choice.id}`,
-                    name: "Run QuickAdd " + choice.name,
-                    callback: async () => {
-                        await new ChoiceExecutor(this.app, this).execute(choice);
-                    }
-                })
-            }
-        };
         this.addCommand({
             id: "new-form",
             name: "New form",
