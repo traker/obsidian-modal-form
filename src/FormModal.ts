@@ -119,7 +119,7 @@ export class FormModal extends Modal {
                             },
                         }, fieldInput.folder);
                         element.onChange(async (value) => {
-                            this.formResult[definition.name] = value;
+                            this.formResult[definition.name] = '[[' + value + ']]';
                         });
                     });
                 case "slider":
@@ -219,7 +219,7 @@ export class FormModal extends Modal {
                                     this.formResult[definition.name] = element.getValue();
                                     element.onChange(async (value) => {
                                         this.formResult[definition.name] =
-                                            value;
+                                            '[[' + value + ']]';
                                     });
                                 });
                             default:
